@@ -6,6 +6,11 @@ export const getAllVideos = () => {
         .then((res) => res.json())
 };
 
+export const getSearchResults = (search) => {
+    return fetch(`${baseUrl}/search?q=${search}`)
+        .then((res => res.json()))
+}
+
 export const addVideo = (video) => {
     return fetch(baseUrl, {
         method: "POST",
